@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.js": "/react-homework-template/static/js/main.b49d3652.js",
-    "static/js/673.4152005e.chunk.js": "/react-homework-template/static/js/673.4152005e.chunk.js",
-    "static/js/421.099304a0.chunk.js": "/react-homework-template/static/js/421.099304a0.chunk.js",
-    "static/js/95.b69c0566.chunk.js": "/react-homework-template/static/js/95.b69c0566.chunk.js",
-    "static/js/256.35d4de86.chunk.js": "/react-homework-template/static/js/256.35d4de86.chunk.js",
-    "static/js/128.d03b6061.chunk.js": "/react-homework-template/static/js/128.d03b6061.chunk.js",
-    "static/media/about.png": "/react-homework-template/static/media/about.eb147b8e7e5a221e2516.png",
-    "static/media/home-2.jpg": "/react-homework-template/static/media/home-2.ad7874a8ce243885d4cb.jpg",
-    "static/media/home-1.png": "/react-homework-template/static/media/home-1.54657ef8edcb2fd9a5d2.png",
-    "static/media/natural-2.jpg": "/react-homework-template/static/media/natural-2.f06bf8f9ee70d3c256aa.jpg",
-    "static/media/natural-1.jpg": "/react-homework-template/static/media/natural-1.18b32d579a4dfc779c4d.jpg",
-    "static/media/logo.svg": "/react-homework-template/static/media/logo.0055418269cc586480e417e3bac61fdf.svg",
-    "index.html": "/react-homework-template/index.html",
-    "static/media/basket.svg": "/react-homework-template/static/media/basket.01d9e891778b5d22242b8141eeee5692.svg",
-    "static/media/search.svg": "/react-homework-template/static/media/search.a5243f0b9b70a7b2037a3c5aaf65daae.svg",
-    "main.b49d3652.js.map": "/react-homework-template/static/js/main.b49d3652.js.map",
-    "673.4152005e.chunk.js.map": "/react-homework-template/static/js/673.4152005e.chunk.js.map",
-    "421.099304a0.chunk.js.map": "/react-homework-template/static/js/421.099304a0.chunk.js.map",
-    "95.b69c0566.chunk.js.map": "/react-homework-template/static/js/95.b69c0566.chunk.js.map",
-    "256.35d4de86.chunk.js.map": "/react-homework-template/static/js/256.35d4de86.chunk.js.map",
-    "128.d03b6061.chunk.js.map": "/react-homework-template/static/js/128.d03b6061.chunk.js.map"
+    "main.js": "/sigma-hw-05/static/js/main.f60e290a.js",
+    "static/js/673.4152005e.chunk.js": "/sigma-hw-05/static/js/673.4152005e.chunk.js",
+    "static/js/421.099304a0.chunk.js": "/sigma-hw-05/static/js/421.099304a0.chunk.js",
+    "static/js/95.b69c0566.chunk.js": "/sigma-hw-05/static/js/95.b69c0566.chunk.js",
+    "static/js/256.35d4de86.chunk.js": "/sigma-hw-05/static/js/256.35d4de86.chunk.js",
+    "static/js/128.d03b6061.chunk.js": "/sigma-hw-05/static/js/128.d03b6061.chunk.js",
+    "static/media/about.png": "/sigma-hw-05/static/media/about.eb147b8e7e5a221e2516.png",
+    "static/media/home-2.jpg": "/sigma-hw-05/static/media/home-2.ad7874a8ce243885d4cb.jpg",
+    "static/media/home-1.png": "/sigma-hw-05/static/media/home-1.54657ef8edcb2fd9a5d2.png",
+    "static/media/natural-2.jpg": "/sigma-hw-05/static/media/natural-2.f06bf8f9ee70d3c256aa.jpg",
+    "static/media/natural-1.jpg": "/sigma-hw-05/static/media/natural-1.18b32d579a4dfc779c4d.jpg",
+    "static/media/logo.svg": "/sigma-hw-05/static/media/logo.0055418269cc586480e417e3bac61fdf.svg",
+    "index.html": "/sigma-hw-05/index.html",
+    "static/media/basket.svg": "/sigma-hw-05/static/media/basket.01d9e891778b5d22242b8141eeee5692.svg",
+    "static/media/search.svg": "/sigma-hw-05/static/media/search.a5243f0b9b70a7b2037a3c5aaf65daae.svg",
+    "main.f60e290a.js.map": "/sigma-hw-05/static/js/main.f60e290a.js.map",
+    "673.4152005e.chunk.js.map": "/sigma-hw-05/static/js/673.4152005e.chunk.js.map",
+    "421.099304a0.chunk.js.map": "/sigma-hw-05/static/js/421.099304a0.chunk.js.map",
+    "95.b69c0566.chunk.js.map": "/sigma-hw-05/static/js/95.b69c0566.chunk.js.map",
+    "256.35d4de86.chunk.js.map": "/sigma-hw-05/static/js/256.35d4de86.chunk.js.map",
+    "128.d03b6061.chunk.js.map": "/sigma-hw-05/static/js/128.d03b6061.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.b49d3652.js"
+    "static/js/main.f60e290a.js"
   ]
 }
