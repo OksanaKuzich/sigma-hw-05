@@ -13,7 +13,7 @@ export const App = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<MyCompLayout />}>
-            <Route index element={<MyCompHome />} />
+            <Route index element={<MyCompHome />}/>
             <Route path="cart" element={<MyCompCart />} />
             <Route path="*" element={<MyCompNotFound />} />
           </Route>

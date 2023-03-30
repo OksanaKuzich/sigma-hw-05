@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { device } from 'utiles/devices';
 import { SubtitleStyle } from '../Subtitle/Subtitle.styled';
 
 export const ProductsSection = styled.section`
@@ -9,11 +8,5 @@ export const ProductsSection = styled.section`
 
   ${SubtitleStyle} {
     margin-bottom: 8px;
-  }
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
   }
 `;
