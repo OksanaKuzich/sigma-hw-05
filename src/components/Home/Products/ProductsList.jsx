@@ -13,6 +13,7 @@ export const ProductsList = ({
   isNewData,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [idModal, setIdModal] = useState('');
 
   useEffect(() => {
     console.log(isModalOpen);
@@ -31,27 +32,33 @@ export const ProductsList = ({
     }
   }, [getProducts, isBtnClick, setIsBtnClick, isNewData, setIsNewData]);
 
-  const handleClickBtn = () => {
+  const handleClickBtn = e => {
+    setIdModal(e.target.id);
     setIsModalOpen(true);
   };
 
   return (
     <>
       <ProductsListStyle>
-        {products.map(({ name, category, price, image, rate, promoPrice }) => (
-          <ProductsListItem
-            key={name + rate}
-            name={name}
-            category={category}
-            price={price}
-            image={image}
-            rate={rate}
-            promoPrice={promoPrice}
-            funcClick={handleClickBtn}
-          />
-        ))}
+        {products.map(
+          ({ name, category, price, image, rate, promoPrice, _id }) => (
+            <ProductsListItem
+              key={name + rate}
+              name={name}
+              category={category}
+              price={price}
+              image={image}
+              rate={rate}
+              promoPrice={promoPrice}
+              funcClick={handleClickBtn}
+              id={_id}
+            />
+          )
+        )}
       </ProductsListStyle>
-      {isModalOpen && <ProductModal setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && (
+        <ProductModal setIsModalOpen={setIsModalOpen} idModal={idModal} />
+      )}
     </>
   );
 };

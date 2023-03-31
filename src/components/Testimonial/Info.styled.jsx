@@ -22,7 +22,6 @@ export const InfoList = styled.ul`
 export const InfoItem = styled.li`
   width: 211px;
   height: 211px;
-
   border: 4px solid ${props => props.theme.colors.accent};
   border-radius: 50%;
 `;

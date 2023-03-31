@@ -34,9 +34,9 @@ export const getRandomProducts = async () => {
   }
 };
 
-export const getOneProducts = async () => {
+export const getOneProducts = async (id) => {
   try {
-    const responce = await axios('/:id');
+    const responce = await axios(`/${id}`);
     return responce.data;
   } catch (error) {
     console.log(error.message);

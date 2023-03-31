@@ -21,9 +21,10 @@ export const ProductsListItem = ({
   rate,
   promoPrice,
   funcClick,
+  id,
 }) => {
   return (
-    <ProductCard key={name} onClick={funcClick}>
+    <ProductCard key={name} onClick={funcClick} id={id}>
       <ProductCategory>{category}</ProductCategory>
       <ImageWrapper>
         <Image src={image} alt={name} />

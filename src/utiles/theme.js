@@ -13,6 +13,7 @@ export const theme = {
     white: '#ffffff',
     decore: '#DEDDDD',
     oldPrice: '#b8b8b8',
+    modal: ' #FFFAFA',
   },
   fonts: {
     main: 'Roboto, sans-serif',
