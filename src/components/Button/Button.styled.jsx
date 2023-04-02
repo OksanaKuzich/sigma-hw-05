@@ -29,6 +29,7 @@ export const ButtomComp = styled.button`
   font-size: ${props => props.theme.fontSizes.fs18};
   line-height: 1.15;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: ${props => props.theme.fonts.secondary};
 
   :hover,
   :focus {

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { device } from 'utiles/devices';
 
 export const ProductCard = styled.li`
   box-sizing: border-box;
@@ -7,11 +6,7 @@ export const ProductCard = styled.li`
   background: ${props => props.theme.colors.backgroundLigth};
   border-radius: 30px;
   padding: 29px 26px 17px 30px;
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
+  cursor: pointer;
 `;
 
 export const ProductCategory = styled.p`
@@ -27,23 +22,11 @@ export const ProductCategory = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ImageWrapper = styled.div`
   height: 324px;
   border-radius: 30px;
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const Image = styled.img`
@@ -51,12 +34,6 @@ export const Image = styled.img`
   height: 330px;
   object-fit: cover;
   border-radius: 30px;
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ProductName = styled.p`

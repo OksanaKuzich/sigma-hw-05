@@ -3,21 +3,44 @@ import { Rate } from '../Rate';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useEffect, useState } from 'react';
 import { getOneProducts } from 'service/api';
-import { Wrapper, Modal } from './ProductModal.styled';
+import { ReactComponent as BtnClose } from '../../../../images/icon/close.svg';
+import {
+  Wrapper,
+  Modal,
+  ImageSt,
+  ImageWrapper,
+  ModalInfo,
+  CloseBtn,
+  ModalTitle,
+  ModalDetalis,
+  ModalPriceWrapper,
+  ModalShortDescr,
+  ModalLabel,
+  ModalInput,
+  MoreInfo,
+  DescriptionInfo,
+  ButtonDescrInfo,
+} from './ProductModal.styled';
+import { Price, PricePromo, ProductCategory } from '../ProductListItem.styled';
+import { Button } from 'components/Button/Button';
+import { useCart } from 'hook/useCart';
 
 const body = document.getElementsByTagName('body')[0];
 const modalRoot = document.querySelector('#modal-root');
 
-export const ProductModal = ({ setIsModalOpen, idModal }) => {
+export const ProductModal = ({ setIsModalOpen, idProduct }) => {
   const [product, setProduct] = useState([]);
+  const [isDescrShow, setIsDescrShow] = useState(true);
+
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const getProduct = async func => {
-      const newProduct = await getOneProducts(idModal);
+      const newProduct = await getOneProducts(idProduct);
       setProduct(newProduct);
     };
     getProduct();
-  }, [idModal]);
+  }, [idProduct]);
 
   const handleBackdropClick = e => {
     if (e.currentTarget === e.target) {
@@ -31,6 +54,10 @@ export const ProductModal = ({ setIsModalOpen, idModal }) => {
     }
   };
 
+  const handleClickBtn = () => {
+    setIsModalOpen(false);
+  };
+
   useEffect(() => {
     disableBodyScroll(body);
     window.addEventListener('keydown', handleKeyDown);
@@ -40,26 +67,86 @@ export const ProductModal = ({ setIsModalOpen, idModal }) => {
     };
   });
 
+  const handleClickDescrToggle = () => {
+    setIsDescrShow(!isDescrShow);
+  };
+
+  const formSubmit = e => {
+    e.preventDefault();
+    const quantity = e.target.elements.quantity.value;
+    addToCart(idProduct, product, quantity);
+    setIsModalOpen(false);
+  };
+
   return createPortal(
     <Wrapper onClick={handleBackdropClick}>
       <Modal>
-        <div>
-          <img src={product.image} alt="product" />
-          <div>
-            <p>{product.category}</p>
-            <p>{product.name}</p>
+        <ModalInfo>
+          <ImageWrapper>
+            <ImageSt src={product.image} alt={product.image} />
+            <ProductCategory>{product.category}</ProductCategory>
+          </ImageWrapper>
+          <ModalDetalis>
+            <ModalTitle>{product.name}</ModalTitle>
             <Rate rate={product.rate} />
-            <p>{product.price}</p>
-            <p>{product.promoPrice}</p>
-            <p>{product.shortDescr}</p>
-          </div>
-        </div>
-        <div>
-          <button type="button">Product Description</button>
-          <button type="button">Additional Info</button>
-        </div>
-        <p>{product.description}</p>
-        <p>{product.additionalInfo}</p>
+            <ModalPriceWrapper>
+              {product.promoPrice === 0 ? null : (
+                <Price>${product.price}.00</Price>
+              )}
+              {product.promoPrice === 0 ? (
+                <PricePromo>${product.price}.00</PricePromo>
+              ) : (
+                <PricePromo>${product.promoPrice}.00</PricePromo>
+              )}
+            </ModalPriceWrapper>
+            <ModalShortDescr>{product.shortDescr}</ModalShortDescr>
+            <form onSubmit={formSubmit}>
+              <ModalLabel>
+                Quantity:
+                <ModalInput
+                  type="text"
+                  name="quantity"
+                  placeholder="0"
+                  pattern="^[ 0-9]+$"
+                  min="0"
+                  maxLength="1000"
+                  required
+                />
+              </ModalLabel>
+              <Button text={'Add To Cart'} stl="blue" type="submit" />
+            </form>
+          </ModalDetalis>
+          <CloseBtn type="button" onClick={handleClickBtn}>
+            <BtnClose />
+          </CloseBtn>
+        </ModalInfo>
+        <MoreInfo>
+          <ButtonDescrInfo
+            onClick={handleClickDescrToggle}
+            type="button"
+            style={{
+              backgroundColor: isDescrShow ? '#274C5B' : '#EFF6F1',
+              color: isDescrShow ? '#fff' : '#274C5B',
+            }}
+          >
+            Product Description
+          </ButtonDescrInfo>
+          <ButtonDescrInfo
+            onClick={handleClickDescrToggle}
+            type="button"
+            style={{
+              backgroundColor: !isDescrShow ? '#274C5B' : '#EFF6F1',
+              color: !isDescrShow ? '#fff' : '#274C5B',
+            }}
+          >
+            Additional Info
+          </ButtonDescrInfo>
+          {isDescrShow ? (
+            <DescriptionInfo>{product.description}</DescriptionInfo>
+          ) : (
+            <DescriptionInfo>{product.additionalInfo}</DescriptionInfo>
+          )}
+        </MoreInfo>
       </Modal>
     </Wrapper>,
     modalRoot

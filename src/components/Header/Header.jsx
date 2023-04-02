@@ -1,6 +1,7 @@
 import { ReactComponent as Logo } from 'images/icon/logo.svg';
 import { ReactComponent as SearchIcon } from 'images/icon/search.svg';
 import { ReactComponent as BasketIcon } from 'images/icon/basket.svg';
+import { useCart } from 'hook/useCart';
 import {
   HeaderSection,
   NavList,
@@ -13,6 +14,8 @@ import {
 } from './Header.styled';
 
 export const Header = () => {
+  const { amount } = useCart();
+
   return (
     <HeaderSection>
       <Logo />
@@ -37,7 +40,7 @@ export const Header = () => {
           <BasketWrapper>
             <BasketIcon />
           </BasketWrapper>
-          Cart (0)
+          Cart ({amount})
         </BasketBtn>
       </BntWrapper>
     </HeaderSection>

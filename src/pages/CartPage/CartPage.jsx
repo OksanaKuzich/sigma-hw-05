@@ -1,4 +1,4 @@
-import { Header } from 'components/Home/Header/Header';
+import { Header } from 'components/Header/Header';
 
 const CartPage = () => {
   return (

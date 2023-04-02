@@ -1,7 +1,7 @@
 import { Subtitle } from 'components/Home/Subtitle/Subtitle';
 import { Title } from 'components/Home/Title/Title';
 import { Rate } from 'components/Home/Products/Rate';
-import reviewsImg from '../../images/testimonial-2.png';
+import reviewsImg from '../../../images/testimonial-2.png';
 import { Info } from './Info';
 import {
   TestimonialSection,

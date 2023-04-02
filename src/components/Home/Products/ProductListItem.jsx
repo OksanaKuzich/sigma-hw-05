@@ -24,7 +24,7 @@ export const ProductsListItem = ({
   id,
 }) => {
   return (
-    <ProductCard key={name} onClick={funcClick} id={id}>
+    <ProductCard key={name} onClick={funcClick} data-id={id}>
       <ProductCategory>{category}</ProductCategory>
       <ImageWrapper>
         <Image src={image} alt={name} />

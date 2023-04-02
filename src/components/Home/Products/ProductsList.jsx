@@ -13,11 +13,7 @@ export const ProductsList = ({
   isNewData,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [idModal, setIdModal] = useState('');
-
-  useEffect(() => {
-    console.log(isModalOpen);
-  }, [setIsModalOpen, isModalOpen]);
+  const [idProduct, setIdProduct] = useState('');
 
   useEffect(() => {
     if (isNewData) {
@@ -33,7 +29,7 @@ export const ProductsList = ({
   }, [getProducts, isBtnClick, setIsBtnClick, isNewData, setIsNewData]);
 
   const handleClickBtn = e => {
-    setIdModal(e.target.id);
+    setIdProduct(e.currentTarget.dataset.id);
     setIsModalOpen(true);
   };
 
@@ -57,7 +53,10 @@ export const ProductsList = ({
         )}
       </ProductsListStyle>
       {isModalOpen && (
-        <ProductModal setIsModalOpen={setIsModalOpen} idModal={idModal} />
+        <ProductModal
+          setIsModalOpen={setIsModalOpen}
+          idProduct={idProduct}
+        />
       )}
     </>
   );

@@ -14,6 +14,7 @@ export const theme = {
     decore: '#DEDDDD',
     oldPrice: '#b8b8b8',
     modal: ' #FFFAFA',
+    gallery: '#F1F8F4',
   },
   fonts: {
     main: 'Roboto, sans-serif',
@@ -25,7 +26,10 @@ export const theme = {
     fs18: '18px',
     fs20: '20px',
     fs24: '24px',
+    fs25: '25px',
+    fs27: '27px',
     fs28: '28px',
+    fs30: '30px',
     fs32: '32px',
     fs36: '36px',
     fs40: '40px',
