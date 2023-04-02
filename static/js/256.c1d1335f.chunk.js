@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksigma_hw_05=self.webpackChunksigma_hw_05||[]).push([[256],{9256:function(e,n,s){s.r(n);var u=s(184);n.default=function(){return(0,u.jsx)(u.Fragment,{children:(0,u.jsx)("div",{children:"NotFound page"})})}}}]);
+//# sourceMappingURL=256.c1d1335f.chunk.js.map
