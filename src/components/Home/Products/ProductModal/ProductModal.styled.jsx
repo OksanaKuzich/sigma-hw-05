@@ -21,18 +21,21 @@ export const Wrapper = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  padding: 60px;
+  padding: 50px 30px;
   top: 50%;
   left: 50%;
-  width: 1450px;
+  width: 680px;
   transform: translate(-50%, -50%);
   background: ${props => props.theme.colors.modal};
   border-radius: 30px;
 
   @media ${device.tablet} {
+    width: 1160px;
+    padding: 60px;
   }
 
   @media ${device.desktop} {
+    width: 1450px;
   }
 `;
 
@@ -52,13 +55,14 @@ export const ImageSt = styled.img`
 
 export const ImageWrapper = styled.div`
   position: relative;
-  width: 591px;
-  height: 563px;
+  width: 391px;
   background: ${props => props.theme.colors.backgroundLigth};
   border-radius: 30px;
   overflow: hidden;
 
   @media ${device.tablet} {
+    width: 591px;
+    height: 563px;
   }
 
   @media ${device.desktop} {
@@ -73,10 +77,14 @@ export const ImageWrapper = styled.div`
 
 export const ModalInfo = styled.div`
   display: flex;
-  gap: 88px;
   margin-bottom: 90px;
+  flex-direction: column;
+  align-items: center;
 
   @media ${device.tablet} {
+    gap: 88px;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   @media ${device.desktop} {
@@ -107,10 +115,11 @@ export const CloseBtn = styled.button`
 `;
 
 export const ModalDetalis = styled.div`
-  padding-top: 106px;
-  width: 658px;
+  padding-top: 50px;
+  max-width: 658px;
 
   @media ${device.tablet} {
+    padding-top: 106px;
   }
 
   @media ${device.desktop} {
@@ -200,12 +209,12 @@ export const ModalInput = styled.input`
 `;
 
 export const MoreInfo = styled.div`
-  width: 1137px;
-  text-align: center;
   margin-left: auto;
   margin-right: auto;
 
   @media ${device.tablet} {
+    width: 1137px;
+    text-align: center;
   }
 
   @media ${device.desktop} {
@@ -228,10 +237,10 @@ export const DescriptionInfo = styled.p`
 export const ButtonDescrInfo = styled.button`
   font-family: ${props => props.theme.fonts.secondary};
   font-weight: ${props => props.theme.fontWeights.fw700};
-  font-size: ${props => props.theme.fontSizes.fs25};
+  font-size: ${props => props.theme.fontSizes.fs18};
   border-radius: 16px;
   margin-bottom: 27px;
-  width: 363px;
+  width: 263px;
   height: 80px;
   border: none;
   cursor: pointer;
@@ -247,6 +256,9 @@ export const ButtonDescrInfo = styled.button`
   }
 
   @media ${device.tablet} {
+    font-size: ${props => props.theme.fontSizes.fs25};
+    width: 363px;
+    height: 80px;
   }
 
   @media ${device.desktop} {
