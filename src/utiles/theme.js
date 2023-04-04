@@ -15,6 +15,7 @@ export const theme = {
     oldPrice: '#b8b8b8',
     modal: ' #FFFAFA',
     gallery: '#F1F8F4',
+    placeholder: '#ababab',
   },
   fonts: {
     main: 'Roboto, sans-serif',
@@ -43,12 +44,5 @@ export const theme = {
     fw600: '600',
     fw700: '700',
     fw800: '800',
-  },
-  radii: {
-    none: '0',
-    br40: '40px',
-    br20: '20px',
-    round: '50%',
-    // 50% 36px 16px 30px 20px 18px
   },
 };

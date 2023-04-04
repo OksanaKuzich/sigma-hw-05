@@ -1,3 +1,4 @@
+import { ButtomComp } from 'components/Button/Button.styled';
 import styled from 'styled-components';
 import { device } from 'utiles/devices';
 import { Price, PricePromo, ProductCategory } from '../ProductListItem.styled';
@@ -11,15 +12,11 @@ export const Wrapper = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const Modal = styled.div`
+  margin-top: 200px;
+
   position: absolute;
   padding: 50px 30px;
   top: 50%;
@@ -30,11 +27,13 @@ export const Modal = styled.div`
   border-radius: 30px;
 
   @media ${device.tablet} {
+    margin-top: 100px;
     width: 1160px;
     padding: 60px;
   }
 
   @media ${device.desktop} {
+    margin-top: 100px;
     width: 1450px;
   }
 `;
@@ -45,12 +44,6 @@ export const ImageSt = styled.img`
   object-position: 50% 50%;
   margin-left: auto;
   margin-right: auto;
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -63,9 +56,6 @@ export const ImageWrapper = styled.div`
   @media ${device.tablet} {
     width: 591px;
     height: 563px;
-  }
-
-  @media ${device.desktop} {
   }
 
   ${ProductCategory} {
@@ -86,9 +76,6 @@ export const ModalInfo = styled.div`
     flex-direction: row;
     align-items: flex-start;
   }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const CloseBtn = styled.button`
@@ -106,12 +93,6 @@ export const CloseBtn = styled.button`
   :focus {
     background: ${props => props.theme.colors.accent};
   }
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ModalDetalis = styled.div`
@@ -121,21 +102,12 @@ export const ModalDetalis = styled.div`
   @media ${device.tablet} {
     padding-top: 106px;
   }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ModalTitle = styled.h2`
   font-weight: ${props => props.theme.fontWeights.fw600};
   font-size: ${props => props.theme.fontSizes.fs40};
   margin-bottom: 9px;
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ModalPriceWrapper = styled.div`
@@ -151,12 +123,6 @@ export const ModalPriceWrapper = styled.div`
   ${PricePromo} {
     font-size: ${props => props.theme.fontSizes.fs25};
   }
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ModalShortDescr = styled.div`
@@ -166,12 +132,6 @@ export const ModalShortDescr = styled.div`
   font-size: ${props => props.theme.fontSizes.fs18};
   line-height: 1.65;
   color: ${props => props.theme.colors.gray};
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ModalLabel = styled.label`
@@ -179,10 +139,10 @@ export const ModalLabel = styled.label`
   font-size: ${props => props.theme.fontSizes.fs20};
   margin-right: 20px;
 
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
+  & ~ ${ButtomComp} {
+    :hover {
+      background-color: ${props => props.theme.colors.btn};
+    }
   }
 `;
 
@@ -198,14 +158,7 @@ export const ModalInput = styled.input`
   font-weight: ${props => props.theme.fontWeights.fw700};
   font-size: ${props => props.theme.fontSizes.fs20};
   line-height: 1.15;
-
   color: ${props => props.theme.colors.main};
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const MoreInfo = styled.div`
@@ -216,9 +169,6 @@ export const MoreInfo = styled.div`
     width: 1137px;
     text-align: center;
   }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const DescriptionInfo = styled.p`
@@ -226,12 +176,6 @@ export const DescriptionInfo = styled.p`
   font-size: ${props => props.theme.fontSizes.fs18};
   line-height: 1.65;
   color: ${props => props.theme.colors.gray};
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
 `;
 
 export const ButtonDescrInfo = styled.button`
@@ -259,8 +203,5 @@ export const ButtonDescrInfo = styled.button`
     font-size: ${props => props.theme.fontSizes.fs25};
     width: 363px;
     height: 80px;
-  }
-
-  @media ${device.desktop} {
   }
 `;

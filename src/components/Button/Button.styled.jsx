@@ -48,3 +48,32 @@ export const ButtomComp = styled.button`
     font-size: ${props => props.theme.fontSizes.fs20};
   }
 `;
+
+export const IconArrowWrapper = styled.div`
+  margin-left: 10px;
+  width: 19px;
+  height: 19px;
+  background: #335b6b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media ${device.tablet} {
+  }
+
+  @media ${device.desktop} {
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media ${device.tablet} {
+  }
+
+  @media ${device.desktop} {
+  }
+`;

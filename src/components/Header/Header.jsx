@@ -1,7 +1,7 @@
 import { ReactComponent as Logo } from 'images/icon/logo.svg';
 import { ReactComponent as SearchIcon } from 'images/icon/search.svg';
 import { ReactComponent as BasketIcon } from 'images/icon/basket.svg';
-import { useCart } from 'hook/useCart';
+import { useCart } from 'hooks/useCart';
 import {
   HeaderSection,
   NavList,
@@ -11,14 +11,18 @@ import {
   BasketWrapper,
   BntWrapper,
   Label,
+  AccentAmount,
 } from './Header.styled';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const { amount } = useCart();
 
   return (
     <HeaderSection>
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
       <nav>
         <NavList>
           <li>Home</li>
@@ -36,11 +40,14 @@ export const Header = () => {
             <SearchIcon />
           </SearchBtn>
         </Label>
-        <BasketBtn>
+        <BasketBtn to="/cart">
           <BasketWrapper>
             <BasketIcon />
           </BasketWrapper>
-          Cart ({amount})
+          <div>
+            Cart (
+            {amount === 0 ? amount : <AccentAmount>{amount}</AccentAmount>})
+          </div>
         </BasketBtn>
       </BntWrapper>
     </HeaderSection>

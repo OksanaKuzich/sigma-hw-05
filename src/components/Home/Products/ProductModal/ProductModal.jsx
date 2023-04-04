@@ -4,6 +4,8 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useEffect, useState } from 'react';
 import { getOneProducts } from 'service/api';
 import { ReactComponent as BtnClose } from '../../../../images/icon/close.svg';
+import { Button } from 'components/Button/Button';
+import { useCart } from 'hooks/useCart';
 import {
   Wrapper,
   Modal,
@@ -22,8 +24,6 @@ import {
   ButtonDescrInfo,
 } from './ProductModal.styled';
 import { Price, PricePromo, ProductCategory } from '../ProductListItem.styled';
-import { Button } from 'components/Button/Button';
-import { useCart } from 'hook/useCart';
 
 const body = document.getElementsByTagName('body')[0];
 const modalRoot = document.querySelector('#modal-root');
@@ -71,10 +71,10 @@ export const ProductModal = ({ setIsModalOpen, idProduct }) => {
     setIsDescrShow(!isDescrShow);
   };
 
-  const formSubmit = e => {
+  const formSubmit = async e => {
     e.preventDefault();
     const quantity = e.target.elements.quantity.value;
-    addToCart(idProduct, product, quantity);
+    await addToCart(idProduct, product, quantity);
     setIsModalOpen(false);
   };
 

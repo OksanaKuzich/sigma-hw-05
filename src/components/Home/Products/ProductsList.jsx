@@ -53,10 +53,7 @@ export const ProductsList = ({
         )}
       </ProductsListStyle>
       {isModalOpen && (
-        <ProductModal
-          setIsModalOpen={setIsModalOpen}
-          idProduct={idProduct}
-        />
+        <ProductModal setIsModalOpen={setIsModalOpen} idProduct={idProduct} />
       )}
     </>
   );

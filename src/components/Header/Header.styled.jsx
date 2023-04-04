@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { device } from 'utiles/devices';
+import { Link } from 'react-router-dom';
 
 export const HeaderSection = styled.header`
   padding: 30px;
   display: flex;
+  gap: 50px;
   align-items: center;
   justify-content: space-between;
   font-weight: 700;
@@ -79,7 +81,7 @@ export const SearchBtn = styled.div`
   }
 `;
 
-export const BasketBtn = styled.button`
+export const BasketBtn = styled(Link)`
   width: 159px;
   height: 66px;
   border: 1px solid #e0e0e0;
@@ -108,4 +110,9 @@ export const BntWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 18px;
+`;
+
+export const AccentAmount = styled.span`
+  color: rgb(255, 0, 0);
 `;

@@ -11,6 +11,7 @@ body {
   font-weight: 400;
   font-style: normal;
   color: #274C5B;
+  height: 100vh;
 }
 
 h1,
@@ -42,5 +43,15 @@ img {
 
 button, input {
   cursor: pointer;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
 }
 `;

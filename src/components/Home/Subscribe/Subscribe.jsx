@@ -19,7 +19,7 @@ export const Subscribe = () => {
               placeholder="Your Email Address"
               pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
             />
-            <Button text={'Subscribe'} stl="blue" type="submit" />
+            <Button text={'Subscribe'} stl="blue" type="submit" icon="no" />
           </form>
         </SubscribeForm>
       </Container>

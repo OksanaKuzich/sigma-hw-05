@@ -22,9 +22,6 @@ export const FooterTitle = styled.p`
   font-size: ${props => props.theme.fontSizes.fs30};
   color: ${props => props.theme.colors.main};
   font-family: ${props => props.theme.fonts.main};
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const ContactsGroup = styled.div`
@@ -41,23 +38,14 @@ export const ContactsList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 50px;
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const ContactsItem = styled.li`
   line-height: 1.65;
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const ContactsName = styled.p`
   font-weight: ${props => props.theme.fontWeights.fw700};
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const PagesGroup = styled.div`
@@ -74,9 +62,6 @@ export const PagesList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 38px;
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const MessengersGroup = styled.div`
@@ -119,9 +104,6 @@ export const MessengersInfo = styled.p`
   margin-bottom: 49px;
   font-family: ${props => props.theme.fonts.secondary};
   line-height: 1.65;
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const MessengersList = styled.ul`
@@ -130,9 +112,6 @@ export const MessengersList = styled.ul`
   gap: 15px;
   justify-content: center;
   align-items: center;
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const MessengerItem = styled.li`
@@ -143,9 +122,6 @@ export const MessengerItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const FooterCopyright = styled.div`
@@ -154,14 +130,8 @@ export const FooterCopyright = styled.div`
   padding-bottom: 16px;
   border-top: 1px solid ${props => props.theme.colors.background};
   font-family: ${props => props.theme.fonts.secondary};
-
-  @media ${device.tablet} {
-  }
 `;
 
 export const CopyrightAccent = styled.span`
   font-weight: ${props => props.theme.fontWeights.fw700};
-
-  @media ${device.tablet} {
-  }
 `;

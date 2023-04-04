@@ -1,11 +1,10 @@
-import { Header } from 'components/Header/Header';
+import { Cart } from 'components/Cart/Cart';
 
 const CartPage = () => {
   return (
-    <>
-      <Header />
-      <div>Cart page</div>
-    </>
+    <main>
+      <Cart />
+    </main>
   );
 };
 
