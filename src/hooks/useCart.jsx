@@ -11,12 +11,14 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(parsedCart);
 
   useEffect(() => {
-    const summ = cart.reduce(
-      (acc, product) => acc + Number(product.quantity),
-      0
-    );
-    setAmount(summ);
-    localStorage.setItem('YoursCart', JSON.stringify(cart));
+    if (cart) {
+      const summ = cart.reduce(
+        (acc, product) => acc + Number(product.quantity),
+        0
+      );
+      setAmount(summ);
+      localStorage.setItem('YoursCart', JSON.stringify(cart));
+    }
   }, [cart]);
 
   const changeAmount = items => {
