@@ -32,17 +32,20 @@ export const Cart = () => {
   };
 
   useEffect(() => {
-    setTotalCart(totalCount(cart));
-    setTotalCartLoc(totalCount(cartLocal));
-
-    setDiscountCart(
-      cartLocal.reduce((acc, { promoPrice, price, quantity }) => {
-        if (promoPrice === 0) {
-          return acc;
-        }
-        return acc + (Number(price) - Number(promoPrice)) * Number(quantity);
-      }, 0)
-    );
+    if (cart) {
+      setTotalCart(totalCount(cart));
+    }
+    if (cartLocal) {
+      setTotalCartLoc(totalCount(cartLocal));
+      setDiscountCart(
+        cartLocal.reduce((acc, { promoPrice, price, quantity }) => {
+          if (promoPrice === 0) {
+            return acc;
+          }
+          return acc + (Number(price) - Number(promoPrice)) * Number(quantity);
+        }, 0)
+      );
+    }
   }, [cart, cartLocal]);
 
   const toOrderCart = () => {
