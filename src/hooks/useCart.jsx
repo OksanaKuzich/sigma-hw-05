@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (idProduct, product, quantity) => {
-    if (cart && cart.some(i => i._id === idProduct)) {
+    if (cart.length > 0 && cart.some(i => i._id === idProduct)) {
       setCart(
         cart.map(item => {
           if (item._id === product._id) {
