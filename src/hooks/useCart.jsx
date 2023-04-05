@@ -6,19 +6,17 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const savedCart = localStorage.getItem('YoursCart');
-  const parsedCart = JSON.parse(savedCart);
+  const parsedCart = JSON.parse(savedCart) ?? [];
   const [amount, setAmount] = useState(0);
   const [cart, setCart] = useState(parsedCart);
 
   useEffect(() => {
-    if (cart) {
-      const summ = cart.reduce(
-        (acc, product) => acc + Number(product.quantity),
-        0
-      );
-      setAmount(summ);
-      localStorage.setItem('YoursCart', JSON.stringify(cart));
-    }
+    const summ = cart.reduce(
+      (acc, product) => acc + Number(product.quantity),
+      0
+    );
+    setAmount(summ);
+    localStorage.setItem('YoursCart', JSON.stringify(cart));
   }, [cart]);
 
   const changeAmount = items => {
@@ -26,7 +24,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (idProduct, product, quantity) => {
-    if (cart.length > 0 && cart.some(i => i._id === idProduct)) {
+    if (cart.some(i => i._id === idProduct)) {
       setCart(
         cart.map(item => {
           if (item._id === product._id) {
