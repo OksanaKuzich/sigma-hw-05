@@ -8,7 +8,7 @@ import { CartProvider } from './hooks/useCart';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/sigma-hw-05/">
+    <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CartProvider>
           <App />
