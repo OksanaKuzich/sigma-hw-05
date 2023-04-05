@@ -1,10 +1,9 @@
 import { Button } from 'components/Button/Button';
-import { Container } from 'components/Container/Container.styled';
-import newsFirst from '../../../images/news-1.jpg';
-import newsSecond from '../../../images/news-2.jpg';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { Title } from '../Title/Title';
 import { ReactComponent as Icon } from '../../../images/icon/person.svg';
+import { newsArr } from './data';
+import { Container } from 'components/Container/Container.styled';
 import {
   NewsWrapper,
   NewsTitles,
@@ -17,23 +16,6 @@ import {
   CardTitle,
   CardInfo,
 } from './News.styled';
-
-const newsArr = [
-  {
-    image: newsFirst,
-    author: 'By Rachi Card',
-    title: 'The Benefits of Vitamin D & How to Get It',
-    info: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
-    date: '25 Nov',
-  },
-  {
-    image: newsSecond,
-    author: 'By Rachi Card',
-    title: 'Our Favourite Summertime Tommeto',
-    info: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
-    date: '25 Nov',
-  },
-];
 
 export const News = () => {
   return (

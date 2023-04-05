@@ -6,28 +6,23 @@ import bgDerore from '../../images/notFound-2.png';
 
 export const NotFoundSection = styled.section`
   margin-bottom: 130px;
-  background: url(${bgDerore}), url(${bgImage});
-  width: 1920px;
-  height: 898px;
-
-  @media ${device.tablet} {
-  }
-
-  @media ${device.desktop} {
-  }
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const NotFoundInfo = styled.div`
-  padding: 214px 260px 214px 1127px;
+  padding: 50px 150px;
 
   ${Title} {
     margin: 0;
   }
 
   @media ${device.tablet} {
+    padding: 214px 260px 214px 727px;
   }
 
   @media ${device.desktop} {
+    padding: 214px 260px 214px 1127px;
   }
 `;
 
@@ -41,5 +36,26 @@ export const NotFoundSubtitle = styled.p`
   }
 
   @media ${device.desktop} {
+  }
+`;
+
+export const ImageBg = styled.div`
+  background: url(${bgDerore}), url(${bgImage});
+  background-repeat: no-repeat;
+  width: 768px;
+  background-position: top right;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media ${device.tablet} {
+    width: 1280px;
+    height: 898px;
+    background-position: -230px;
+  }
+
+  @media ${device.desktop} {
+    width: 1920px;
+    height: 898px;
+    background-position: center;
   }
 `;

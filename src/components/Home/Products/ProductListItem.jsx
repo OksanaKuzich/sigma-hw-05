@@ -1,4 +1,3 @@
-import { RateWrapper } from './Rate.styled';
 import { Rate } from './Rate';
 import {
   ProductCard,
@@ -12,6 +11,7 @@ import {
   PricePromo,
   Info,
 } from './ProductListItem.styled';
+import { RateWrapper } from './Rate.styled';
 
 export const ProductsListItem = ({
   name,

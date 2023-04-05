@@ -1,17 +1,18 @@
-import { Title } from 'components/Home/Hero/Hero.styled';
 import { useCart } from 'hooks/useCart';
 import cartEmptyUrl from '../../images/cart_empty-3.jpg';
 import { CartList } from './CartList';
 import { useState, useEffect } from 'react';
+import { Button } from 'components/Button/Button';
+import { CartForm } from './Form/CartForm';
+import { Title } from 'components/Home/Hero/Hero.styled';
 import {
   CartSection,
   CartEmptyWrapper,
   CartProducts,
   TotalCart,
   TotalWrapper,
+  CartBgImage,
 } from './Cart.styled';
-import { Button } from 'components/Button/Button';
-import { CartForm } from './Form/CartForm';
 
 export const Cart = () => {
   const { cart } = useCart();
@@ -50,7 +51,9 @@ export const Cart = () => {
 
   return (
     <CartSection>
-      <Title>Cart</Title>
+      <CartBgImage>
+        <Title>Cart</Title>
+      </CartBgImage>
       {totalCart === 0 ? (
         <CartEmptyWrapper>
           <img src={cartEmptyUrl} alt="cart empty" />

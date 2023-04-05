@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom';
 import { Rate } from '../Rate';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useEffect, useState } from 'react';
-import { getOneProducts } from 'service/api';
+
 import { ReactComponent as BtnClose } from '../../../../images/icon/close.svg';
 import { Button } from 'components/Button/Button';
 import { useCart } from 'hooks/useCart';
@@ -28,19 +28,9 @@ import { Price, PricePromo, ProductCategory } from '../ProductListItem.styled';
 const body = document.getElementsByTagName('body')[0];
 const modalRoot = document.querySelector('#modal-root');
 
-export const ProductModal = ({ setIsModalOpen, idProduct }) => {
-  const [product, setProduct] = useState([]);
+export const ProductModal = ({ setIsModalOpen, idProduct, product }) => {
   const [isDescrShow, setIsDescrShow] = useState(true);
-
   const { addToCart } = useCart();
-
-  useEffect(() => {
-    const getProduct = async func => {
-      const newProduct = await getOneProducts(idProduct);
-      setProduct(newProduct);
-    };
-    getProduct();
-  }, [idProduct]);
 
   const handleBackdropClick = e => {
     if (e.currentTarget === e.target) {

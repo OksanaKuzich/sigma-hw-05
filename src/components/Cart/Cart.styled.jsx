@@ -5,23 +5,29 @@ import CartDecoreBg from '../../images/cart-1.png';
 import CartBg from '../../images/cart-2.jpg';
 
 export const CartSection = styled.section`
-  background: url(${CartDecoreBg}), url(${CartBg});
-  background-repeat: no-repeat;
-  background-position: top -40px right -340px;
-
-  @media ${device.tablet} {
-    background-position: top -40px right -340px;
-  }
-
-  @media ${device.desktop} {
-    background-position: top right;
-  }
-
   ${Title} {
     padding-top: 184px;
     padding-bottom: 184px;
     text-align: center;
     margin: 0 auto;
+  }
+`;
+
+export const CartBgImage = styled.div`
+  background: url(${CartDecoreBg}), url(${CartBg});
+  background-repeat: no-repeat;
+  background-position: top -40px right -340px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media ${device.tablet} {
+    background-position: top -40px right -340px;
+    width: 1280px;
+  }
+
+  @media ${device.desktop} {
+    background-position: top right;
+    width: 1920px;
   }
 `;
 

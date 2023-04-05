@@ -2,6 +2,9 @@ import { ReactComponent as Logo } from 'images/icon/logo.svg';
 import { ReactComponent as SearchIcon } from 'images/icon/search.svg';
 import { ReactComponent as BasketIcon } from 'images/icon/basket.svg';
 import { useCart } from 'hooks/useCart';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { MobileMenu } from 'components/MobileMenu/MobileMenu';
 import {
   HeaderSection,
   NavList,
@@ -12,11 +15,17 @@ import {
   BntWrapper,
   Label,
   AccentAmount,
+  IconMobile,
+  NavItem,
 } from './Header.styled';
-import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const { amount } = useCart();
+  const [isOpenMobMenu, setIsOpenMobMenu] = useState(false);
+
+  const handleClickMobileMenu = () => {
+    setIsOpenMobMenu(true);
+  };
 
   return (
     <HeaderSection>
@@ -25,15 +34,16 @@ export const Header = () => {
       </Link>
       <nav>
         <NavList>
-          <li>Home</li>
-          <li>About</li>
-          <li>Pages</li>
-          <li>Shop</li>
-          <li>Projects</li>
-          <li>News</li>
+          <NavItem>Home</NavItem>
+          <NavItem>About</NavItem>
+          <NavItem>Pages</NavItem>
+          <NavItem>Shop</NavItem>
+          <NavItem>Projects</NavItem>
+          <NavItem>News</NavItem>
         </NavList>
       </nav>
       <BntWrapper>
+        <IconMobile onClick={handleClickMobileMenu} />
         <Label>
           <Search />
           <SearchBtn>
@@ -50,6 +60,7 @@ export const Header = () => {
           </div>
         </BasketBtn>
       </BntWrapper>
+      {isOpenMobMenu && <MobileMenu setIsOpenMobMenu={setIsOpenMobMenu} />}
     </HeaderSection>
   );
 };

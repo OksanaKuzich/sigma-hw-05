@@ -188,6 +188,7 @@ export const ButtonDescrInfo = styled.button`
   height: 80px;
   border: none;
   cursor: pointer;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :nth-child(1) {
     margin-right: 20px;

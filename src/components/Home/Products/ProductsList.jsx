@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { ProductsListItem } from './ProductListItem';
-import { ProductsListStyle } from './ProductsList.styled';
 import { getAllProducts, getPopularProducts } from '../../../service/api';
 import { ProductModal } from './ProductModal/ProductModal';
+import { ProductsListStyle } from './ProductsList.styled';
+import { Preloader } from 'components/Preloader/Preloader';
+import { getOneProducts } from 'service/api';
 
 export const ProductsList = ({
   products,
@@ -14,22 +16,31 @@ export const ProductsList = ({
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [idProduct, setIdProduct] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    if (isNewData) {
-      if (isBtnClick) {
-        getProducts(getAllProducts);
-        setIsNewData(false);
-      } else {
-        getProducts(getPopularProducts);
-        setIsBtnClick(false);
-        setIsNewData(false);
+    const renderProducts = async () => {
+      if (isNewData) {
+        if (isBtnClick) {
+          await getProducts(getAllProducts);
+          setIsNewData(false);
+        } else {
+          await getProducts(getPopularProducts);
+          setIsBtnClick(false);
+          setIsNewData(false);
+        }
       }
-    }
+    };
+    renderProducts();
   }, [getProducts, isBtnClick, setIsBtnClick, isNewData, setIsNewData]);
 
-  const handleClickBtn = e => {
+  const handleClickBtn = async e => {
     setIdProduct(e.currentTarget.dataset.id);
+    setIsLoading(true);
+    const newProduct = await getOneProducts(e.currentTarget.dataset.id);
+    setProduct(newProduct);
+    setIsLoading(false);
     setIsModalOpen(true);
   };
 
@@ -52,9 +63,14 @@ export const ProductsList = ({
           )
         )}
       </ProductsListStyle>
-      {isModalOpen && (
-        <ProductModal setIsModalOpen={setIsModalOpen} idProduct={idProduct} />
+      {isModalOpen && !isLoading && (
+        <ProductModal
+          setIsModalOpen={setIsModalOpen}
+          idProduct={idProduct}
+          product={product}
+        />
       )}
+      {isLoading && <Preloader />}
     </>
   );
 };

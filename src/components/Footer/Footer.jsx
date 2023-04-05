@@ -1,6 +1,6 @@
-import { Container } from 'components/Container/Container.styled';
 import { contacts, messengers, pages } from './data';
 import { ReactComponent as Logo } from 'images/icon/logo.svg';
+import { Container } from 'components/Container/Container.styled';
 import {
   FooterWrapper,
   FooterTitle,
@@ -46,7 +46,7 @@ export const Footer = () => {
               {messengers.map(({ name, icon, href }) => {
                 return (
                   <MessengerItem key={name}>
-                    <a href={href}>
+                    <a href={href} target="_blank" rel="noreferrer">
                       <img src={icon} alt={name} />
                     </a>
                   </MessengerItem>
@@ -71,8 +71,8 @@ export const Footer = () => {
       <FooterCopyright>
         <p>
           Copyright &copy; <CopyrightAccent>Organick</CopyrightAccent> |
-          Designed by 
-          <CopyrightAccent> VictorFlow </CopyrightAccent> 
+          Designed by
+          <CopyrightAccent> VictorFlow </CopyrightAccent>
           Templates - Powered by <CopyrightAccent> Webflow</CopyrightAccent>
         </p>
       </FooterCopyright>

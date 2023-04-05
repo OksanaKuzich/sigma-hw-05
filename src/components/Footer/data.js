@@ -22,22 +22,22 @@ export const messengers = [
   {
     name: 'Instagram',
     icon: instagram,
-    href: '',
+    href: 'https://www.instagram.com/',
   },
   {
     name: 'Facebook',
     icon: facebook,
-    href: '',
+    href: 'https://uk-ua.facebook.com/',
   },
   {
     name: 'Twitter',
     icon: twitter,
-    href: '',
+    href: 'https://twitter.com/',
   },
   {
     name: 'Pinterest',
     icon: pinterest,
-    href: '',
+    href: 'https://www.pinterest.com/',
   },
 ];
 

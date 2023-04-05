@@ -10,6 +10,7 @@ import { News } from 'components/Home/News/News';
 import { Subscribe } from 'components/Home/Subscribe/Subscribe';
 
 const HomePage = () => {
+
   return (
     <>
       <main>

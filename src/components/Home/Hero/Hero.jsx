@@ -1,6 +1,6 @@
+import { Button } from 'components/Button/Button';
 import { Container } from 'components/Container/Container.styled';
 import { HeroSection, Subtitle, Title } from './Hero.styled';
-import { Button } from 'components/Button/Button';
 
 export const Hero = () => {
   return (

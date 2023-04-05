@@ -1,6 +1,7 @@
-import { Container } from 'components/Container/Container.styled';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { Title } from '../Title/Title';
+import { ecoArr } from './data';
+import { Container } from 'components/Container/Container.styled';
 import {
   EcoSection,
   Image,
@@ -10,23 +11,6 @@ import {
   EcoItemSubtitle,
 } from './Eco.styled';
 
-const ecoArr = [
-  {
-    title: 'Start with Our Company First',
-    subtitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.',
-  },
-  {
-    title: 'Learn How to Grow Yourself',
-    subtitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.',
-  },
-  {
-    title: 'Farming Strategies of Today',
-    subtitle:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.',
-  },
-];
 export const Eco = () => {
   return (
     <EcoSection>

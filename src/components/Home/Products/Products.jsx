@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Button } from 'components/Button/Button';
-import { Container } from 'components/Container/Container.styled';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { Title } from '../Title/Title';
-import { ProductsSection } from './Products.styled';
 import { ProductsList } from './ProductsList';
 import { getPopularProducts } from '../../../service/api';
+import { Container } from 'components/Container/Container.styled';
+import { ProductsSection } from './Products.styled';
+import { Preloader } from 'components/Preloader/Preloader';
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
   const [isBtnClick, setIsBtnClick] = useState(false);
   const [isNewData, setIsNewData] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const allProducts = () => {
     setIsBtnClick(!isBtnClick);
@@ -18,8 +20,10 @@ export const Products = () => {
   };
 
   const getProducts = async func => {
+    setIsLoading(true);
     const newProducts = await func();
     setProducts(newProducts);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -45,6 +49,7 @@ export const Products = () => {
           stl={'blue'}
           func={allProducts}
         />
+        {isLoading && <Preloader />}
       </Container>
     </ProductsSection>
   );
